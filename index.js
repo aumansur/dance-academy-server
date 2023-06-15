@@ -43,7 +43,7 @@ const client = new MongoClient(uri, {
   },
 });
 
-// async function run() {
+async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
@@ -71,11 +71,11 @@ const client = new MongoClient(uri, {
     });
 
     // Classes
-    app.post("/classes", async (req, res) => {
-      const body = req.body;
-      const result = await allClassesCollection.insertOne(body);
-      res.send(result);
-    });
+    // app.post("/classes", async (req, res) => {
+    //   const body = req.body;
+    //   const result = await allClassesCollection.insertOne(body);
+    //   res.send(result);
+    // });
     app.patch("/classes/:id", async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };

@@ -126,11 +126,11 @@ async function run() {
       res.send(result);
     });
     //selectedClass
-    app.post("/selectClasses", async (req, res) => {
-      const body = req.body;
-      const result = await allSelectedClasses.insertOne(body);
-      res.send(result);
-    });
+    // app.post("/selectClasses", async (req, res) => {
+    //   const body = req.body;
+    //   const result = await allSelectedClasses.insertOne(body);
+    //   res.send(result);
+    // });
 
     app.get("/userSeclectedClass/:email", async (req, res) => {
       const email = req.params.email;

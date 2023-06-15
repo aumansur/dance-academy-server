@@ -71,11 +71,11 @@ async function run() {
     });
 
     // Classes
-    app.post("/classes", async (req, res) => {
-      const body = req.body;
-      const result = await allClassesCollection.insertOne(body);
-      res.send(result);
-    });
+    // app.post("/classes", async (req, res) => {
+    //   const body = req.body;
+    //   const result = await allClassesCollection.insertOne(body);
+    //   res.send(result);
+    // });
     app.patch("/classes/:id", async (req, res) => {
       const id = req.params.id;
       const filter = { _id: new ObjectId(id) };

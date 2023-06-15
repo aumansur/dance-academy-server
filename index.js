@@ -154,9 +154,9 @@ async function run() {
       if (exestingUser) {
         return res.send({ message: "user already exists" });
       }
-    //   const result = await usersCollection.insertOne(body);
-    //   res.send(result);
-    // });
+      const result = await usersCollection.insertOne(body);
+      res.send(result);
+    });
 
     app.get("/users", async (req, res) => {
       const result = await usersCollection.find().toArray();
@@ -246,7 +246,7 @@ async function run() {
       res.send({ insertResult, deleteResult });
     });
 
-    app.get("/payment/:email", async (req, res) => {
+    // app.get("/payment/:email", async (req, res) => {
       const email = req.params.email;
       const query = { email: email };
       const result = await paymentCollection.find(query).toArray();

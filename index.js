@@ -70,7 +70,7 @@ async function run() {
       res.send({ token });
     });
 
-    Classes;
+    // Classes
     app.post("/classes", async (req, res) => {
       const body = req.body;
       const result = await allClassesCollection.insertOne(body);
@@ -120,11 +120,11 @@ async function run() {
     });
     // Instructor
 
-    app.get("/instructors", async (req, res) => {
-      const query = { role: "instructor" };
-      const result = await usersCollection.find(query).toArray();
-      res.send(result);
-    });
+    // app.get("/instructors", async (req, res) => {
+    //   const query = { role: "instructor" };
+    //   const result = await usersCollection.find(query).toArray();
+    //   res.send(result);
+    // });
     //selectedClass
     app.post("/selectClasses", async (req, res) => {
       const body = req.body;
